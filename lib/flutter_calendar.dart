@@ -1,9 +1,10 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
-import 'package:tuple/tuple.dart';
-import 'package:flutter_calendar/calendar_tile.dart';
 import 'package:date_utils/date_utils.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_calendar/calendar_tile.dart';
+import 'package:flutter_icons/flutter_icons.dart';
+import 'package:tuple/tuple.dart';
 
 typedef DayBuilder(BuildContext context, DateTime day);
 
@@ -16,6 +17,7 @@ class Calendar extends StatefulWidget {
   final bool showTodayAction;
   final bool showCalendarPickerIcon;
   final DateTime initialCalendarDateOverride;
+  final IconData calendarPickerIcon;
 
   Calendar(
       {this.onDateSelected,
@@ -25,7 +27,8 @@ class Calendar extends StatefulWidget {
       this.showTodayAction: true,
       this.showChevronsToChangeRange: true,
       this.showCalendarPickerIcon: true,
-      this.initialCalendarDateOverride});
+      this.initialCalendarDateOverride,
+      this.calendarPickerIcon});
 
   @override
   _CalendarState createState() => new _CalendarState();
@@ -64,7 +67,7 @@ class _CalendarState extends State<Calendar> {
     if (widget.showCalendarPickerIcon) {
       rightInnerIcon = new IconButton(
         onPressed: () => selectDateFromPicker(),
-        icon: new Icon(Icons.calendar_today),
+        icon: new Icon(widget.calendarPickerIcon ?? AntDesign.calendar),
       );
     } else {
       rightInnerIcon = new Container();
@@ -185,17 +188,15 @@ class _CalendarState extends State<Calendar> {
 
     if (isExpanded) {
       final TextStyle body1StyleDisabled = body1Style.copyWith(
-        color: Color.fromARGB(
-          100, 
-          body1Style.color.red, 
-          body1Style.color.green, 
-          body1Style.color.blue,
-        )
-      );
+          color: Color.fromARGB(
+        100,
+        body1Style.color.red,
+        body1Style.color.green,
+        body1Style.color.blue,
+      ));
 
-      dateStyles = monthStarted && !monthEnded
-          ? body1Style
-          : body1StyleDisabled;
+      dateStyles =
+          monthStarted && !monthEnded ? body1Style : body1StyleDisabled;
     } else {
       dateStyles = body1Style;
     }

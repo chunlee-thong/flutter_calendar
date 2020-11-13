@@ -13,6 +13,7 @@ dependencies:
   intl: ^0.15.0
   tuple: ^1.0.1
   date_utils: ^0.1.0
+  flutter_icons: ^1.1.0
 
 dev_dependencies:
   flutter_test:

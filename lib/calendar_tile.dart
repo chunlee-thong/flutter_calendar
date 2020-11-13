@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:date_utils/date_utils.dart';
+import 'package:flutter/material.dart';
 
 class CalendarTile extends StatelessWidget {
   final VoidCallback onDateSelected;
@@ -36,6 +36,7 @@ class CalendarTile extends StatelessWidget {
     } else {
       return new InkWell(
         onTap: onDateSelected,
+        customBorder: CircleBorder(),
         child: new Container(
           decoration: isSelected
               ? new BoxDecoration(
@@ -46,7 +47,9 @@ class CalendarTile extends StatelessWidget {
           alignment: Alignment.center,
           child: new Text(
             Utils.formatDay(date).toString(),
-            style: isSelected ? Theme.of(context).primaryTextTheme.body1 : dateStyles,
+            style: isSelected
+                ? Theme.of(context).primaryTextTheme.body1
+                : dateStyles,
             textAlign: TextAlign.center,
           ),
         ),
