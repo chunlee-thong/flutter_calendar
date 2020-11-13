@@ -39,7 +39,7 @@
     },
     {
       "name": "date_utils",
-      "rootUri": "file:///Users/chunleethong/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/date_utils-0.1.0+2",
+      "rootUri": "file:///Users/chunleethong/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/date_utils-0.1.0+3",
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
@@ -75,9 +75,9 @@
     },
     {
       "name": "intl",
-      "rootUri": "file:///Users/chunleethong/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.15.8",
+      "rootUri": "file:///Users/chunleethong/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.16.1",
       "packageUri": "lib/",
-      "languageVersion": "2.0"
+      "languageVersion": "2.5"
     },
     {
       "name": "matcher",
@@ -169,7 +169,7 @@
       "packageUri": "lib/"
     }
   ],
-  "generated": "2020-11-13T16:36:55.940391Z",
+  "generated": "2020-11-13T16:44:22.954563Z",
   "generator": "pub",
   "generatorVersion": "2.10.3"
 }
