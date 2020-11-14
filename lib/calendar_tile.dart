@@ -25,6 +25,7 @@ class CalendarTile extends StatelessWidget {
   Widget renderDateOrDayOfWeek(BuildContext context) {
     if (isDayOfWeek) {
       return new InkWell(
+        customBorder: CircleBorder(),
         child: new Container(
           alignment: Alignment.center,
           child: new Text(
@@ -48,7 +49,7 @@ class CalendarTile extends StatelessWidget {
           child: new Text(
             Utils.formatDay(date).toString(),
             style: isSelected
-                ? Theme.of(context).primaryTextTheme.body1
+                ? Theme.of(context).primaryTextTheme.bodyText2
                 : dateStyles,
             textAlign: TextAlign.center,
           ),
@@ -62,6 +63,7 @@ class CalendarTile extends StatelessWidget {
     if (child != null) {
       return new InkWell(
         child: child,
+        customBorder: CircleBorder(),
         onTap: onDateSelected,
       );
     }
